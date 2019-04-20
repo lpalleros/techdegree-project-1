@@ -50,7 +50,7 @@ var quotes = [
     source:"Michael Jordan"
   },    
 ];
-console.log(quotes);
+
 
 
 
