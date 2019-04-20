@@ -20,7 +20,7 @@ var quotes = [
     source:"Samuel Johnson"
   },
   {
-    quote:"“Becoming is better than being.”",
+    quote:"Becoming is better than being.",
     source:"Carol Dweck",
     citation:"Mindset",
     year: "2006"
@@ -30,7 +30,7 @@ var quotes = [
     source:"Charles Kettering"
   },
   {
-    quote:"“know yourself and you will win all battles",
+    quote:"Know yourself and you will win all battles",
     source:"Sun Tzu",
     citation:"Art of War",
     year:"5th Century BC"
@@ -40,7 +40,7 @@ var quotes = [
     source:"Albert Einstein"
   },
   {
-    quote:"Remember: no practice, no skill acquisition. ",
+    quote:"Remember: no practice, no skill acquisition.",
     source:"Josh Kaufman",
     citation:"The First 20 Hours",
     year:"2013"    
@@ -61,6 +61,12 @@ var quotes = [
    - Cse the random number to `return` a random quote object from the `quotes` array.
 ***/
 
+function getRandomQuote() {
+  var randomNumber = Math.floor(Math.random() * quotes.length);
+  return quotes[randomNumber];
+}
+
+
 
 
 
@@ -76,6 +82,21 @@ var quotes = [
    - Don't forget to close that final `p` tag.
    - Set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
+
+function printQuote(){
+ var i  = getRandomQuote();
+ var text = '';
+ text += '<p class="quote">' + i.quote + '</p> ';
+ text += '<p class="source">'+ i.source;
+      if (i.citation !== undefined) {
+        text += '<span class="citation"> '+ i.citation + '</span>';
+      }
+      if (i.year !== undefined){
+        text += '<span class="year"> '+ i.year + '</span>';
+      } 
+  text += '</p>';
+  return document.getElementById('quote-box').innerHTML = text ;
+}
 
 
 
