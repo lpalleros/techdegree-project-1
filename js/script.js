@@ -14,6 +14,43 @@ project 1 - A Random Quote Generator
   Add the `year` property to at least one object in the array.
   Use console.log() to log your array of quotes to the console.
 ***/
+var quotes = [
+  {
+    quote:"The chains of habit are too weak to be felt until they are too strong to be broken.",
+    source:"Samuel Johnson"
+  },
+  {
+    quote:"“Becoming is better than being.”",
+    source:"Carol Dweck",
+    citation:"Mindset",
+    year: "2006"
+  },
+  {
+    quote:"A problem well stated is a problem half-solved.",
+    source:"Charles Kettering"
+  },
+  {
+    quote:"“know yourself and you will win all battles",
+    source:"Sun Tzu",
+    citation:"Art of War",
+    year:"5th Century BC"
+  },
+  {
+    quote:"A person who never made a mistake never tried anything new.",
+    source:"Albert Einstein"
+  },
+  {
+    quote:"Remember: no practice, no skill acquisition. ",
+    source:"Josh Kaufman",
+    citation:"The First 20 Hours",
+    year:"2013"    
+  },
+  {
+    quote: "I can accept failure, everyone fails at something. But I can't accept not trying.",
+    source:"Michael Jordan"
+  },    
+];
+console.log(quotes);
 
 
 
