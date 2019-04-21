@@ -71,28 +71,20 @@ function getRandomQuote() {
 
 
 /***
-  Create the `printQuote` function to: 
-   - Call the `getRandomQuote` function and assign it to a variable.
-   - Create a variable for the HTML string and set it equal to an empty string.
-   - Use the HTML template in the instructions or the markup in the index.html file, AND 
-     the random quote vairable to build your HTML string.
-   - Add the quote and source section to the HTML string.
-   - Use an if statement to check for the citation property before adding it to the HTML string.
-   - Use an if statement to check for the year property before adding it to the HTML string.
-   - Don't forget to close that final `p` tag.
-   - Set the `innerHTML` of the `quote-box` div to the HTML string. 
+  This Function select a random quote, creates a the HTML content an innerHTML at the end.
+  the var i store a randomNumber
 ***/
 
 function printQuote(){
- var i  = getRandomQuote();
+ var randomQuote  = getRandomQuote();
  var text = '';
- text += '<p class="quote">' + i.quote + '</p> ';
- text += '<p class="source">'+ i.source;
-      if (i.citation !== undefined) {
-        text += '<span class="citation"> '+ i.citation + '</span>';
+ text += '<p class="quote">' + randomQuote.quote + '</p> ';
+ text += '<p class="source">'+ randomQuote.source;
+      if (randomQuote.citation !== undefined) {
+        text += '<span class="citation"> '+ randomQuote.citation + '</span>';
       }
-      if (i.year !== undefined){
-        text += '<span class="year"> '+ i.year + '</span>';
+      if (randomQuote.year !== undefined){
+        text += '<span class="year"> '+ randomQuote.year + '</span>';
       } 
   text += '</p>';
   return document.getElementById('quote-box').innerHTML = text ;
