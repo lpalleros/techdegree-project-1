@@ -72,7 +72,7 @@ function getRandomQuote() {
 
 /***
   This Function select a random quote, creates a the HTML content an innerHTML at the end.
-  the var i store a randomNumber
+  the var randomQuote store a random object from a 'quotes' 
 ***/
 
 function printQuote(){
