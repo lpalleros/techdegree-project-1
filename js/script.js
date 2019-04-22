@@ -3,16 +3,9 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// Study guide for this project - https://drive.google.com/file/d/1s5grutGuQFwJcQP8bFwEI69Q8FCkGdDk/view?usp=sharing
-
 
 /*** 
-  Create the array of quote objects and name it `quotes`.
-  Add at least five quote objects to the `quotes` array.
-  Give each quote object a `quote` and `source` property.
-  Add the `citation` property to at least one object in the array.
-  Add the `year` property to at least one object in the array.
-  Use console.log() to log your array of quotes to the console.
+  quotes is an array that contain objets "quote", "source", "citation" and "year".
 ***/
 var quotes = [
   {
@@ -56,9 +49,9 @@ var quotes = [
 
 
 /***
-  Create the `getRandomQuote` function to:
-   - Create a variable to store a random number 
-   - Cse the random number to `return` a random quote object from the `quotes` array.
+ 1 - This function creates a random number from Zero to the length of the array and store that
+ number into the variable 'randomQuote'.
+ 2 - Return an objet from the array "quotes".
 ***/
 
 function getRandomQuote() {
@@ -71,8 +64,14 @@ function getRandomQuote() {
 
 
 /***
-  This Function select a random quote, creates a the HTML content an innerHTML at the end.
-  the var randomQuote store a random object from a 'quotes' 
+  1 - Call the funciton 'getRandomQuote()' an store the array object inside a local variable 'randomQuote'.
+  2 - Declare a local variable 'text'.
+  3 - The variable text is updated adding HTML elements and the text from the property 'quote' and 'source' inside the
+  object 'radomQuote'.
+  4 - if statement checks if the is a property inside de object, if there is a propeperty is going to save it inside 
+  the text.
+  5. return the var 'text' as a innerHTML replacing what's inside the id 'quote-box'
+
 ***/
 
 function printQuote(){
@@ -90,17 +89,41 @@ function printQuote(){
   return document.getElementById('quote-box').innerHTML = text ;
 }
 
+/*** This new function captures a user quote from a prompt every time the user click the botton 'Write your own quote'.
+
+1 - Ask for a user quote an store the response in a variable 'userQuote'.
+2 - Ask the user nick name and save the answer inside the variable 'userSource'. .
+3 - Push the new object quote into last position of the array 'quotes'.
+
+***/
+
+function newQuote() {
+    var userQuote = prompt('Write any personal quote that you think.'); 
+    var userSource =prompt('What is your nick name?');
+    quotes.push({
+      quote:userQuote,
+      source:userSource,
+      citation: "This Website",
+      year:2019
+    });
+}
+
+
 
 
 
 /***
-  When the "Show another quote" button is clicked, the event listener 
-  below will be triggered, and it will call, or "invoke", the `printQuote` 
-  function. So do not make any changes to the line of code below this 
-  comment.
+  Here is the code which is listen for the user's click, when the user press the "Show another quote" button is 
+  going call the function "printQuote" to replece the HTML inside the Div elememt.
+
 ***/
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
+/***
+ Another event wich is going to call the function "newQuote", when a user click the button "Write your own quote". 
 
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
+***/
+document.getElementById('personal-quote').addEventListener("click", newQuote, false);
+
+
